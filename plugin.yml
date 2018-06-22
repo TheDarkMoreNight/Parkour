@@ -1,11 +1,13 @@
 name: Parkour
 main: me.thedmnight.parkour.parkourMain
-description: Parkour System!
+description: This is my parkour system, use only in my server.
 version: 1.0.0
 authors: [The Secret man (TheDMNight)]
 commands:
   trash:
+  	   description: Open Trash GUI
   checkdata:
+	   description: Check player's data
   musicadmin:
        description: See list of helping for admin (OP)
        permission: music.admin

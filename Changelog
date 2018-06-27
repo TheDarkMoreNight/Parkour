@@ -2,4 +2,6 @@ Changelog Update:
 [Imported version: 1.0.0]
   Imcoming:
     1.0.1: 
-      - Fixed Clicked on any block, show error issue (Issue #4)
+      - Removed Check block data
+      - Added Admin Command 
+      - 

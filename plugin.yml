@@ -1,9 +1,11 @@
 name: Parkour
 main: me.thedmnight.parkour.parkourMain
 description: This is my parkour system, use only in my server.
-version: 1.0.1 [4]
+version: 1.0.1 [5]
 authors: [The Secret man (TheDMNight)]
 commands:
+  admin: 
+    description: Admin command!
   trash:
     description: Open Trash GUI
   checkdata:

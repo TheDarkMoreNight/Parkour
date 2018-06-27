@@ -15,6 +15,7 @@ import me.thedmnight.parkour.NoteBlockAPI.SongPlayer;
 import me.thedmnight.parkour.api.CheckPointConf;
 import me.thedmnight.parkour.api.MusicThread;
 import me.thedmnight.parkour.api.tools.ActionBarAPI;
+import me.thedmnight.parkour.cmd.admin;
 import me.thedmnight.parkour.cmd.adminCommands;
 import me.thedmnight.parkour.cmd.playerCommands;
 import me.thedmnight.parkour.cmd.trash;
@@ -96,6 +97,7 @@ public class parkourMain extends JavaPlugin {
 		getCommand("checkdata").setExecutor(new adminCommands());
 		getCommand("trash").setExecutor(new trash());
 		getCommand("music").setExecutor(new playerCommands(this));
+		getCommand("admin").setExecutor(new admin());
 	}
 
 	public void regEvents() {

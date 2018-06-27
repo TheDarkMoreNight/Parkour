@@ -6,10 +6,7 @@ import org.bukkit.Material;
 import org.bukkit.Sound;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
-import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.block.Action;
-import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
@@ -17,119 +14,7 @@ import me.thedmnight.parkour.api.CheckPointConf;
 import me.thedmnight.parkour.api.Prefix;
 import me.thedmnight.parkour.api.tools.ActionBarAPI;
 
-
 public class onBlock implements Runnable, Listener {
-
-	@EventHandler
-	public void onPlayeronBlock(PlayerInteractEvent e) {
-		Player p = e.getPlayer();
-		if (e.getClickedBlock().getType() == Material.DIAMOND_BLOCK) {
-			if (e.getAction() == Action.RIGHT_CLICK_BLOCK) {
-				p.sendMessage("");
-				p.sendMessage(Prefix.help + "§2Block Helping System");
-				p.sendMessage(Prefix.help + "§f§lBlock: §b§lDIAMOND BLOCK");
-				p.sendMessage(Prefix.help + "§5Buff: §d§lSpeed");
-				p.sendMessage(Prefix.help + "§3Time: §b§l3 seconds");
-				p.sendMessage(Prefix.help + "§3Level: §b§l2");
-				p.sendMessage("");
-				p.playSound(p.getLocation(), Sound.ENTITY_EXPERIENCE_ORB_PICKUP, 10, 1);
-			} else if (e.getAction() == Action.LEFT_CLICK_BLOCK) {
-				p.sendMessage(Prefix.error + "§7Right Click at This block to get Block Data.");
-			} else {
-				return;
-			}
-		} else if (e.getClickedBlock().getType() == Material.GOLD_BLOCK) {
-			if (e.getAction() == Action.RIGHT_CLICK_BLOCK) {
-				p.sendMessage("");
-				p.sendMessage(Prefix.help + "§2Block Helping System");
-				p.sendMessage(Prefix.help + "§f§lBlock: §e§lGOLD BLOCK");
-				p.sendMessage(Prefix.help + "§5Buff: §d§lJUMP BOOST");
-				p.sendMessage(Prefix.help + "§3Time: §b§l3 seconds");
-				p.sendMessage(Prefix.help + "§3Level: §b§l2");
-				p.sendMessage("");
-				p.playSound(p.getLocation(), Sound.ENTITY_EXPERIENCE_ORB_PICKUP, 10, 1);
-			} else if (e.getAction() == Action.LEFT_CLICK_BLOCK) {
-				p.sendMessage(Prefix.error + "§7Right Click at This block to get Block Data.");
-			} else {
-				return;
-			}
-		} else if (e.getClickedBlock().getType() == Material.LAPIS_BLOCK) {
-			if (e.getAction() == Action.RIGHT_CLICK_BLOCK) {
-				p.sendMessage("");
-				p.sendMessage(Prefix.help + "§2Block Helping System");
-				p.sendMessage(Prefix.help + "§f§lBlock: §1§lLAPIS BLOCK");
-				p.sendMessage(Prefix.help + "§5Buff: §d§lREGENERATION");
-				p.sendMessage(Prefix.help + "§3Time: §b§l1 second");
-				p.sendMessage(Prefix.help + "§3Level: §b§l3");
-				p.sendMessage("");
-				p.playSound(p.getLocation(), Sound.ENTITY_EXPERIENCE_ORB_PICKUP, 10, 1);
-			} else if (e.getAction() == Action.LEFT_CLICK_BLOCK) {
-				p.sendMessage(Prefix.error + "§7Right Click at This block to get Block Data.");
-			} else {
-				return;
-			}
-		} else if (e.getClickedBlock().getType() == Material.COAL_BLOCK) {
-			if (e.getAction() == Action.RIGHT_CLICK_BLOCK) {
-				p.sendMessage("");
-				p.sendMessage(Prefix.help + "§2Block Helping System");
-				p.sendMessage(Prefix.help + "§f§lBlock: §8§lCOAL BLOCK");
-				p.sendMessage(Prefix.help + "§5Buff: §d§lBLINDNESS");
-				p.sendMessage(Prefix.help + "§3Time: §b§l3 seconds");
-				p.sendMessage(Prefix.help + "§3Level: §b§l1");
-				p.sendMessage("");
-				p.playSound(p.getLocation(), Sound.ENTITY_EXPERIENCE_ORB_PICKUP, 10, 1);
-			} else if (e.getAction() == Action.LEFT_CLICK_BLOCK) {
-				p.sendMessage(Prefix.error + "§7Right Click at This block to get Block Data.");
-			} else {
-				return;
-			}
-		} else if (e.getClickedBlock().getType() == Material.SOUL_SAND) {
-			if (e.getAction() == Action.RIGHT_CLICK_BLOCK) {
-				p.sendMessage("");
-				p.sendMessage(Prefix.help + "§2Block Helping System");
-				p.sendMessage(Prefix.help + "§f§lBlock: §4§lSOUL SAND");
-				p.sendMessage(Prefix.help + "§5Buff: §d§lSLOWNESS");
-				p.sendMessage(Prefix.help + "§3Time: §b§l2.5 seconds");
-				p.sendMessage(Prefix.help + "§3Level: §b§l2");
-				p.sendMessage("");
-				p.playSound(p.getLocation(), Sound.ENTITY_EXPERIENCE_ORB_PICKUP, 10, 1);
-			} else if (e.getAction() == Action.LEFT_CLICK_BLOCK) {
-				p.sendMessage(Prefix.error + "§7Right Click at This block to get Block Data.");
-			} else {
-				return;
-			}
-		} else if (e.getClickedBlock().getType() == Material.NETHERRACK) {
-			if (e.getAction() == Action.RIGHT_CLICK_BLOCK) {
-				p.sendMessage("");
-				p.sendMessage(Prefix.help + "§2Block Helping System");
-				p.sendMessage(Prefix.help + "§f§lBlock: §c§lNETHERRACK");
-				p.sendMessage(Prefix.help + "§5Buff: §d§l§o[FIRE]");
-				p.sendMessage(Prefix.help + "§3Time: §b§l3 seconds");
-				p.sendMessage(Prefix.help + "§3Level: §b§l-");
-				p.sendMessage("");
-				p.playSound(p.getLocation(), Sound.ENTITY_EXPERIENCE_ORB_PICKUP, 10, 1);
-			} else if (e.getAction() == Action.LEFT_CLICK_BLOCK) {
-				p.sendMessage(Prefix.error + "§7Right Click at This block to get Block Data.");
-			} else {
-				return;
-			}
-		} else if (e.getClickedBlock().getType() == Material.EMERALD_BLOCK) {
-			if (e.getAction() == Action.RIGHT_CLICK_BLOCK) {
-				p.sendMessage("");
-				p.sendMessage(Prefix.help + "§2Block Helping System");
-				p.sendMessage(Prefix.help + "§f§lBlock: §a§lEMERALD BLOCK");
-				p.sendMessage(Prefix.help + "§5Buff: §2§lCheckpoint!");
-				p.sendMessage(Prefix.help + "§3Time: §b§l-");
-				p.sendMessage(Prefix.help + "§3Level: §b§l-");
-				p.sendMessage("");
-				p.playSound(p.getLocation(), Sound.ENTITY_EXPERIENCE_ORB_PICKUP, 10, 1);
-			} else if (e.getAction() == Action.LEFT_CLICK_BLOCK) {
-				p.sendMessage(Prefix.error + "§7Right Click at This block to get Block Data.");
-			} else {
-				return;
-			}
-		}
-	}
 
 	@SuppressWarnings("unused")
 	@Override

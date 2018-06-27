@@ -85,7 +85,7 @@ public class onJoinItem implements Listener {
 		if (e.getClickedInventory().getName() == p.getName()) {
 			if (e.getCurrentItem().getType() == Material.GREEN_RECORD
 					|| e.getCurrentItem().getType() == Material.RECORD_3
-					|| e.getCurrentItem().getType() == Material.BED) {
+					|| e.getCurrentItem().getType() == Material.BED && e.getCurrentItem().hasItemMeta()) {
 				e.setCancelled(true);
 			} else {
 				return;

@@ -16,11 +16,12 @@ import me.thedmnight.parkour.api.Prefix;
 
 public class onCheckPoint implements Listener {
 
+	@SuppressWarnings("deprecation")
 	@EventHandler
-	public void CheckPoint(PlayerInteractEvent e) {
+	public void CheckPointTeleport(PlayerInteractEvent e) {
 		Player p = e.getPlayer();
-		if (e.getItem().getType() == Material.BED && e.getItem().getItemMeta().isUnbreakable()) {
-			if (e.getAction() == Action.RIGHT_CLICK_AIR || e.getAction() == Action.RIGHT_CLICK_BLOCK) {
+		if (e.getAction() == Action.RIGHT_CLICK_BLOCK || e.getAction() == Action.RIGHT_CLICK_AIR) {
+			if (p.getItemInHand().getType() == Material.BED) {
 				FileConfiguration CPdata = CheckPointConf.getInstance().getData();
 				int x = CPdata.getInt("Player." + p.getName() + ".CheckPoint.X");
 				int y = CPdata.getInt("Player." + p.getName() + ".CheckPoint.Y");
@@ -34,6 +35,8 @@ public class onCheckPoint implements Listener {
 				} else {
 					p.sendMessage(Prefix.error + "§7Not found your Checkpoint.");
 				}
+			} else {
+				return;
 			}
 		}
 	}

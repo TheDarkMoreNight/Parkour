@@ -19,6 +19,7 @@ public class musicclick implements Listener {
 		this.pl = pl;
 	}
 
+	@SuppressWarnings("deprecation")
 	@EventHandler
 	public void onMusicInv(PlayerInteractEvent e) {
 		Player p = e.getPlayer();
@@ -35,7 +36,8 @@ public class musicclick implements Listener {
 		musicumt.setLore(Arrays.asList("§d§lSong Info", "§6§lSong: §e" + title, "§2§lAuthor: §a" + author));
 		musicum.setItemMeta(musicumt);
 		if (pl.getConfig().getString("Players." + p.getName() + ".music").equalsIgnoreCase("false")
-				&& e.getItem().getType() == Material.RECORD_3 || e.getItem().getType() == Material.GOLD_RECORD) {
+				&& p.getItemInHand().getType() == Material.RECORD_3
+				|| p.getItemInHand().getType() == Material.GOLD_RECORD && p.getItemInHand().hasItemMeta()) {
 			p.getInventory().setItem(8, musicum);
 			parkourMain.setPlayerVolume(p, (byte) 80);
 			parkourMain.getPlayerVolume(p);
@@ -56,8 +58,8 @@ public class musicclick implements Listener {
 			pl.saveConfig();
 		} else {
 			if (pl.getConfig().getString("Players." + p.getName() + ".music").equalsIgnoreCase("true")
-					&& e.getItem().getType() == Material.GREEN_RECORD
-					|| e.getItem().getType() == Material.GOLD_RECORD) {
+					&& p.getItemInHand().getType() == Material.GREEN_RECORD
+					|| p.getItemInHand().getType() == Material.GOLD_RECORD) {
 				p.getInventory().setItem(8, musicm);
 				p.playSound(p.getLocation(), Sound.ENTITY_ITEMFRAME_ADD_ITEM, 1, 1);
 				parkourMain.getMusicThread().getSongPlayer().removePlayer(p);

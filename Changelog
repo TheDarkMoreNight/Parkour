@@ -1,7 +1,7 @@
 Changelog Update:
 [Imported version: 1.0.0]
-  Imcoming:
-    1.0.1: 
-      - Removed Check block data
-      - Added Admin Command 
-      - 
+   1.0.1: 
+     - Removed Check block data
+     + Added Admin Command [more command in future]
+     *Fixed some error or bugs
+     [?] Level Selector code is in progress :)
